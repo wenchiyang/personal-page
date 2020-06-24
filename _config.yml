@@ -9,11 +9,11 @@ description: > # this means to ignore newlines until "url:"
 footer_text: > # Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   <a href="https://dtai.cs.kuleuven.be/" target="_blank">DTAI</a>.
   <a href="https://www.kuleuven.be/kuleuven/" target="_blank">KU Leuven</a>.
-  
+
 
 show_news: true
 show_address: true
- 
+
 url:  # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: # leave blank if you don't want to display last updated
@@ -26,7 +26,11 @@ ku_leuven_personnel_number: "0112858"
 teaching:
 - period: 2018-present
   course: Scripting Languages
-  note: A course about XXX
+  note: The aim of the course is
+      - Basic competencies in computational thinking, with an emphasis on algorithmic thinking.
+      - Understanding of the core ingredients of modern scripting languages.
+      - Understanding of structuring concepts in programming langauges.
+      - Ability to design, implement and debug small programs in a modern scripting language.
 # - period: 2018-2019
 #  course: Course 2 name
 #  note: A course about XXX
