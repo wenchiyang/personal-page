@@ -1,9 +1,9 @@
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
-first_name: FirstName
-last_name: LastName
-email: yourname@cs.kuleuven.be
+first_name: Wen-Chi
+last_name: Yang
+email: wenchi.yang@cs.kuleuven.be
 description: > # this means to ignore newlines until "url:"
   KU Leuven PhD researcher at the DTAI research group.
 footer_text: > # Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
@@ -21,29 +21,29 @@ last_updated: # leave blank if you don't want to display last updated
 # -----------------------------------------------------------------------------
 # KU Leuven integration
 # -----------------------------------------------------------------------------
-ku_leuven_personnel_number: "0XXXXXX"
+ku_leuven_personnel_number: "0112858"
 
 teaching:
-- period: 2017-2019
-  course: Course 1 Name
+- period: 2018-present
+  course: Scripting Languages
   note: A course about XXX
-- period: 2018-2019
-  course: Course 2 name
-  note: A course about XXX
+# - period: 2018-2019
+#  course: Course 2 name
+#  note: A course about XXX
 
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
-github_username: # your GitHub user name
+github_username: wenchiyang # your GitHub user name
 twitter_username: # your Twitter handle
 linkedin_username: # your LinkedIn user name
 scholar_userid: # your Google Scholar ID
-orcid_id: # your ORCID ID
+orcid_id: https://orcid.org/0000-0002-5340-3829 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 
 contact_note: >
-  You can reach me on firstname.lastname@cs.kuleuven.be
+  You can reach me on wenchi.yang@cs.kuleuven.be
 
 google_analytics: UA-XXXXXXXXX # out your google-analytics code
 
