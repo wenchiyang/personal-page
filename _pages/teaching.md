@@ -14,7 +14,10 @@ description: List of courses I helped teaching
 
   	{% if item.note %}
 	    <p>
-	    	{{ item.note }}
+	    	{{ item.note }} <br>
+            {% for aim in item.aims %}
+	    	  - {{ aim }} <br>
+            {% endfor %}
 	    </p>
   	{% endif %}
   </div>

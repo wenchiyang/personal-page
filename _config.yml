@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 first_name: Wen-Chi
 last_name: Yang
-email: wenchi.yang@cs.kuleuven.be
+email: wenchi.yang@kuleuven.be
 description: > # this means to ignore newlines until "url:"
   KU Leuven PhD researcher at the DTAI research group.
 footer_text: > # Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
@@ -11,9 +11,8 @@ footer_text: > # Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyl
   <a href="https://www.kuleuven.be/kuleuven/" target="_blank">KU Leuven</a>.
 
 
-show_news: true
+show_news: false
 show_address: true
-
 url:  # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: # leave blank if you don't want to display last updated
@@ -26,11 +25,13 @@ ku_leuven_personnel_number: "0112858"
 teaching:
 - period: 2018-present
   course: Scripting Languages
-  note: The aim of the course is
-      - Basic competencies in computational thinking, with an emphasis on algorithmic thinking.
-      - Understanding of the core ingredients of modern scripting languages.
-      - Understanding of structuring concepts in programming langauges.
-      - Ability to design, implement and debug small programs in a modern scripting language.
+  note: The aims of the course are
+  aims:
+    - Basic competencies in computational thinking, with an emphasis on algorithmic thinking.
+    - Understanding of the core ingredients of modern scripting languages.
+    - Understanding of structuring concepts in programming langauges.
+    - Ability to design, implement and debug small programs in a modern scripting language.
+
 # - period: 2018-2019
 #  course: Course 2 name
 #  note: A course about XXX
@@ -47,7 +48,7 @@ medium_username: # your Medium username
 quora_username: # your Quora username
 
 contact_note: >
-  You can reach me on wenchi.yang@cs.kuleuven.be
+  You can reach me on wenchi.yang@kuleuven.be
 
 google_analytics: UA-XXXXXXXXX # out your google-analytics code
 
