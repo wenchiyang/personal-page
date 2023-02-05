@@ -1,9 +1,11 @@
 ---
 layout: page
-title: Lifted Model Checking for Relational MDPs andRelational Reinforcement Learning
-description: Model checking is widely used in planning and in (safe) reinforcement learning. However, state explosions happen when the domain size increases. We introduce pCTL-REBEL that checks temporal logic formulas against relational MDPs using lifted inference. pCTL-REBEL returns states that satisfy the formula.
-img: /assets/img/1.jpg
+title: Lifted Model Checking for Relational MDPs
+description: An efficient formal verification framework for Safety in AI
 ---
+
+[<a href="https://link.springer.com/article/10.1007/s10994-021-06102-7" target="_blank">Paper</a>]
+[<a href="https://github.com/wenchiyang/pCTL-REBEL" target="_blank">Code</a>]
 
 Model checking has been developed for verifying the behavior of systems with stochastic and non-deterministic behavior. It is used to provide guarantees
 about such systems, an approach which is also adapted in safe reinforcement learning. While most model checking methods focus on propositional models properties, various probabilistic planning and reinforcement frameworks deal with relational domains, for instance, STRIPS planning and relational Markov Decision Processes.

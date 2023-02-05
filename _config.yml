@@ -23,14 +23,13 @@ last_updated: # leave blank if you don't want to display last updated
 ku_leuven_personnel_number: "0112858"
 
 teaching:
-- period: 2018-present
+- period: 2022-present
+  course: Programming Languages and Programming Methodologies
+  note: A ProbLog Course for <a href="https://www.kuleuven.be/programmes/master-digital-humanities" target="_blank">Master of Digital Humanities</a>.
+
+- period: 2018-2022
   course: Scripting Languages
-  note: The aims of the course are
-  aims:
-    - Basic competencies in computational thinking, with an emphasis on algorithmic thinking.
-    - Understanding of the core ingredients of modern scripting languages.
-    - Understanding of structuring concepts in programming langauges.
-    - Ability to design, implement and debug small programs in a modern scripting language.
+  note: A Python Course for <a href="https://www.kuleuven.be/programmes/master-artificial-intelligence" target="_blank">Master of Artificial Intelligence</a>.
 
 # - period: 2018-2019
 #  course: Course 2 name
