@@ -63,25 +63,144 @@ to make way for the ambulance.
 Intelligent systems can, and should, provide quantitative 
 metrics and evaluations so that safety can be demonstrated and improved.
 
-## Safety via a shield
-
+## Driving safely using a shield: Why not?
 
 Shielding is a popular Safe Reinforcement Learning (Safe RL) technique that 
 aims at finding an optimal policy while staying safe.
 To do so, it relies on a **shield**, a logical component that monitors the 
 agent's actions and rejects those that violate the given safety constraint.
-While early shielding techniques operate completely on symbolic state spaces, 
-more recent ones have incorporated a neural policy learner to handle continuous 
-state spaces. In this blog, we will also focus 
+
+<center>
+<img src="{{ site.baseurl }}/assets/img/shielding.png" alt="" width="600">
+<div class="col three caption">
+Shielding in the Reinforcement Learning loop. The <tt>agent</tt> consults the 
+<tt>shield</tt> whether the action it wants to perform is safe or not. Only when
+the action is accepted by the shield (i.e. a "yes" from the shield) does the agent 
+perform the action in the environment.
+</div>
+</center>
+
+
+While early shielding techniques operate completely on symbolic state spaces,
+more recent ones have incorporated a neural policy learner to handle continuous
+state spaces. In this blog, we will also focus
 on **integrating shielding with neural policy learners**.
 
 <center>
 <img src="{{ site.baseurl }}/assets/img/donotturnright.png" alt="" width="500">
+</center>
+
+Consider a self-driving agent that encounters a red light and another vehicle in 
+front to its right. The agent is implemented as a neural network that takes 
+visual input and produces a policy, i.e. a probabilistic distribution over actions 
+<tt>{do-nothing, accelerate, brake, turn-left, turn-right}</tt>. 
+The agent samples actions from this policy until it finds one that is accepted 
+by the shield. In this scenario, the shield determines that accelerating 
+or turning right is unsafe and will only accept actions in
+<tt>{do-nothing, brake, turn-left}</tt>. For example, the agent's policy could be:
+
+<tt>
+0.1::do-nothing, <br/>
+0.5::accelerate, <br/>
+0.1::brake, <br/>
+0.1::turn-left, <br/>
+0.2::turn-right <br/>
+</tt>
+
+The agent samples the first action <tt>accelerate</tt>, which is rejected by the shield.
+The agent samples the second action <tt>accelerate</tt>, which is also rejected by the shield.
+Then, the agent samples the third action <tt>turn-left</tt>, which is accepted by the shield. 
+The agent controls the vehicle to <tt>turn-left</tt> and receives a reward of +5.
+
+This seems okay at first glance, however, this framework is too simple to 
+capture many aspects of the real world.
+
+
+1. Not all actions are completely safe or unsafe. In fact, no actions are completely safe in driving scenarios.
+2. Sensors can be noisy and not deterministic, for example, the sensor may detect an obstacle with a probability of 0.4.
+3. The shield requires an accurate environment model, which is not always available, such as knowing road conditions, weather, and friction.
+4. Traditional shielding techniques can be difficult to integrate with continuous, end-to-end deep reinforcement learning methods.
+5. Even with perfect safety information in all states, rejection-based shielding may fail to learn an optimal policy. It may result in an extremely safe but non-rewarding policy that always stays put.
+
+To mitigate the these issues, we must answer two questions:
+
+1. How can the shield capture **uncertainties** in the real world? 
+2. How should the interface between the agent and the shield be expanded to incorporate both *uncertainty* and *safety*?  
+
+## More ideally, driving **safer** using a **probabilistic** shield
+
+A more ideal learning process may look like this: Consider the same scenario,
+but now the shield has probabilistic perception to detect the probability
+of there being an obstacle. The first rule states "the probability of there being 
+an obstacle in front is 0.8."
+
+<tt>
+0.8::obstacle(front). <br/>
+0.2::obstacle(left). <br/>
+0.5::obstacle(right) <br/>
+</tt>
+
+The shield incorporates the perception into its safety knowledge. 
+The first rule is an if-else statement, stating that 
+"if there is an obstacle in front, and the agent accelerates, then a crash 
+will occur with a probability 0.9."
+
+<tt>
+0.9::crash:-obstacle(front), accelerate.
+0.4::crash:-obstacle(left), turn-left.
+0.4::crash:-obstacle(right), turn-right.
+</tt>
+
+By combining agent's policy, shield's perception and safety knowledge, we 
+obtain a **safer policy**: 
+
+<tt>
+0.17::do-nothing, <br/>
+0.24::accelerate, <br/>
+0.17::brake, <br/>
+0.15::turn-left, <br/>
+0.27::turn-right <br/>
+</tt>
+
+Let's analyze, informally, why this policy is safer:
+
+1. The probability of safer actions, i.e. <tt>do-nothing</tt>, <tt>brake</tt>, and <tt>turn-left</tt>, is higher.
+2. The probability of <tt>accelerate</tt> is 50% lower given:
+   - a high probability (0.8) of an obstacle in front
+   - a high probability (0.9) of a crash if accelerating
+3. The probability of <tt>turn-right</tt> is only slightly higher given:
+   - a probability (0.5) of an obstacle on the right
+   - a probability (0.4) of a crash if turning right
+
+Using this safe policy, the agent will sample and perform an action in the 
+environment. This shielding process provides a more realistic safety measure
+by integrating safety and uncertainty.
+
+
+## Status of project
+
+We propose probabilistic shields as an alternative to the deterministic 
+rejection-based shields.
+Essentially, probabilistic shields take the original policy and noisy sensor 
+readings to produce a safer policy, as demonstrated below.
+
+<center>
+<img src="{{ site.baseurl }}/assets/img/highlevel.png" alt="" width="500">
 <div class="col three caption">
-A self-driving car encounters a red light and another vehicle in front to its right.
-In this scenario, an *intelligent* car probably should not accelerate or turn right.
+A comparison between a traditional rejection-based shield (<tt>SHLD</tt>) 
+and a Probabilistic Logic Shield (<tt>PLS</tt>). 
+**Left**: The policy must keep sampling actions until a safe action is 
+accepted by the rejection-based shield. This requires an assumption that
+an action is either completely safe or unsafe.
+**Right**: We replace <tt>SHLD</tt> with <tt>PLS</tt> that proposes a safer 
+policy without imposing the assumption.
 </div>
 </center>
 
-TODO
+By explicitly connecting action safety to probabilistic semantics,
+probabilistic shields provide a realistic and principled way to 
+balance return and safety. This also allows for shielding to be 
+applied at the policy level instead of at the individual action level, 
+which is typically done in the literature.
 
+At the moment, this work is under review.
