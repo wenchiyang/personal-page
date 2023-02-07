@@ -5,6 +5,10 @@ description: A deep reinforcement learning framework that ensures safety of the 
 img: /assets/img/blocksworld.png
 ---
 
+Some figures in this blog post are generated using
+<a href="https://openai.com/dall-e-2/" target="_blank">DALL.E</a>.
+
+
 
 <center>
 <img src="{{ site.baseurl }}/assets/img/ellenselfdrivingcar.png" alt="Ellen and a self driving car" width="400">
@@ -60,6 +64,24 @@ Intelligent systems can, and should, provide quantitative
 metrics and evaluations so that safety can be demonstrated and improved.
 
 ## Safety via a shield
+
+
+Shielding is a popular Safe Reinforcement Learning (Safe RL) technique that 
+aims at finding an optimal policy while staying safe.
+To do so, it relies on a **shield**, a logical component that monitors the 
+agent's actions and rejects those that violate the given safety constraint.
+While early shielding techniques operate completely on symbolic state spaces, 
+more recent ones have incorporated a neural policy learner to handle continuous 
+state spaces. In this blog, we will also focus 
+on **integrating shielding with neural policy learners**.
+
+<center>
+<img src="{{ site.baseurl }}/assets/img/donotturnright.png" alt="" width="500">
+<div class="col three caption">
+A self-driving car encounters a red light and another vehicle in front to its right.
+In this scenario, an *intelligent* car probably should not accelerate or turn right.
+</div>
+</center>
 
 TODO
 
