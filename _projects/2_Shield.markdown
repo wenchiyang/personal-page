@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Safe Reinforcement Learning vis Probabilistic Logic Shield 
+title: Safe Reinforcement Learning via Probabilistic Logic Shield 
 description: A deep reinforcement learning framework that ensures safety of the learning agent by applying logical constraints on the neural policy.
 img: /assets/img/blocksworld.png
 ---
@@ -174,10 +174,9 @@ Let's analyze, informally, why this policy is safer:
 
 Using this safe policy, the agent will sample and perform an action in the 
 environment. This shielding process provides a more realistic safety measure
-by integrating safety and uncertainty.
+by integrating safety and uncertainty. 
 
-
-## Status of project
+## Probabilistic Logic Shields
 
 We propose probabilistic shields as an alternative to the deterministic 
 rejection-based shields.
@@ -196,6 +195,16 @@ an action is either completely safe or unsafe.
 policy without imposing the assumption.
 </div>
 </center>
+
+We focus on probabilistic shields implemented through 
+**probabilistic logic programs**.
+Although we are using
+the probabilistic logic programming language ProbLog to reason
+about safety, we could also have used alternative representations
+such as Bayesian networks, or other StarAI models.
+The ProbLog representation is however convenient because
+it allows to easily model planning domains, it is Turing equivalent and
+it is differentiable.
 
 By explicitly connecting action safety to probabilistic semantics,
 probabilistic shields provide a realistic and principled way to 
