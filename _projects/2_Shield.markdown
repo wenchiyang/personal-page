@@ -146,9 +146,9 @@ The first rule is an if-else statement, stating that
 will occur with a probability 0.9."
 
 <tt>
-0.9::crash:-obstacle(front), accelerate.
-0.4::crash:-obstacle(left), turn-left.
-0.4::crash:-obstacle(right), turn-right.
+0.9::crash:-obstacle(front), accelerate. <br/>
+0.4::crash:-obstacle(left), turn-left. <br/>
+0.4::crash:-obstacle(right), turn-right. <br/>
 </tt>
 
 By combining agent's policy, shield's perception and safety knowledge, we 
