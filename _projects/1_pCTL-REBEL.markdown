@@ -16,7 +16,7 @@ Probabilistic Model Checking aims at deciding whether a stochastic model satisfi
 - The emergency power supply, after giving a warning, continues to function for at least 10 more minutes with a probability higher than 0.9.
 
 
-We illustrate Probabilistic Model Checking using a simple block's world. Imagine there are a number of blocks numbered 1, 2, etc. 
+We illustrate Probabilistic Model Checking using a simple blocks world. Imagine there are a number of blocks numbered 1, 2, etc. 
 Each block has one of four colors: green, red, blue, or yellow (e.g., a red block with ID 1 is expressed as "<tt>red(1)</tt>"). 
 A block can be on top of another block (e.g., block 8 on top of block 1 is expressed as "<tt>on(8,1)</tt>"). 
 A clear block (with no other block on top) is expressed as "<tt>cl(1)</tt>". 
@@ -43,8 +43,9 @@ cl(3),     cl(4),     cl(6),    cl(10),   cl(5) <br/>
 **Question**: How many possible configurations are there if we have 10 blocks as shown in Fig 1?
 **Answer**: Over 58 million configurations.
 
-This is a surprisingly large number of configurations with only 10 blocks! 
-The number grows exponentially with the number of objects. 
+This is a surprisingly large number of configurations with only 10 blocks!
+In fact, blocks world is a well-known planning domain with NP-hard complexity.
+The number grows exponentially with the number of objects.
 To illustrate this, suppose there is only 1 red block. 
 Then, we have exactly 1 configuration, i.e., <tt>red(1)</tt>. 
 If there are 2 red blocks, then we have 3 configurations:
@@ -58,6 +59,7 @@ s3 = cl(2), on(2, 1) <br/>
 All these configurations are connected by **actions**. 
 For example, we have a robot that can move around and arrange the blocks with a 
 success probability of 0.9 (the robot fails to pick up a block with a probability of 0.1).
+
 
 <center>
 <img src="{{ site.baseurl }}/assets/img/abstracttransition.png" alt="A configuration" width="400">

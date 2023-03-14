@@ -5,6 +5,9 @@ description: A deep reinforcement learning framework that ensures safety of the 
 img: /assets/img/blocksworld.png
 ---
 
+[<a href="https://arxiv.org/abs/2303.03226" target="_blank">Paper</a>]
+[<a href="https://github.com/wenchiyang/pls" target="_blank">Code</a>]
+
 Some figures in this blog post are generated using
 <a href="https://openai.com/dall-e-2/" target="_blank">DALL.E</a>.
 
@@ -211,5 +214,3 @@ probabilistic shields provide a realistic and principled way to
 balance return and safety. This also allows for shielding to be 
 applied at the policy level instead of at the individual action level, 
 which is typically done in the literature.
-
-At the moment, this work is under review.
