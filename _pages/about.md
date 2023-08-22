@@ -14,6 +14,8 @@ Hi, I'm {{ site.first_name }} {{ site.last_name }}, a PhD graduate from the <a h
 
 I worked on combining Formal Verification with Machine Learning to improve safety constraint satisfiability. In particular, I am interested in different ways where the agent can leverage background knowledge to learn and explore safely. 
 
+I'm on the job market. Feel free to reach out!
+
 Click for my <a href="https://docs.google.com/document/d/1sSHUWz4q-kg04KfGa0_VWZV7y2McCIMLZBv2BNpSvG8/edit?usp=sharing" target="_blank">CV</a>
  and <a href="https://docs.google.com/document/d/186kPIo6n7Zpy6TY4pD-stmwC9l-PHSJi3VjztTImLeY/edit?usp=sharing" target="_blank">research statement</a>. 
 
