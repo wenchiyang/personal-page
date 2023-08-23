@@ -7,17 +7,16 @@ img: /assets/img/blocksworld.png
 
 [<a href="https://www.ijcai.org/proceedings/2023/0637.pdf" target="_blank">Paper</a>]
 [<a href="https://github.com/wenchiyang/pls" target="_blank">Code</a>]
+[<a href="https://drive.google.com/file/d/1w7-SJaLGoSkAx4sDFkseD5oPV4eQd6c2/view?usp=sharing" target="_blank">Poster</a>]
 
 Some figures in this blog post are generated using
 <a href="https://openai.com/dall-e-2/" target="_blank">DALL.E</a>.
 
-## Safety in Driving (a very soft introduction) 
+## Safety in AI (a very soft intro)
 
 <center>
 <img src="{{ site.baseurl }}/assets/img/ellenselfdrivingcar.png" alt="Ellen and a self driving car" width="400">
 </center>
-
-
 
 >Ellen had heard a lot about the new self-driving cars, and while the idea of being 
 able to sit back and relax while her car took her where she needed to go sounded 
