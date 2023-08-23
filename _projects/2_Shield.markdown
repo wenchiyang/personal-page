@@ -8,6 +8,9 @@ img: /assets/img/blocksworld.png
 [<a href="https://www.ijcai.org/proceedings/2023/0637.pdf" target="_blank">Paper</a>]
 [<a href="https://github.com/wenchiyang/pls" target="_blank">Code</a>]
 [<a href="https://drive.google.com/file/d/1w7-SJaLGoSkAx4sDFkseD5oPV4eQd6c2/view?usp=sharing" target="_blank">Poster</a>]
+[<a href="https://www.ijcai.org/proceedings/2023/bibtex/637" target="_blank">Bibtex</a>]
+
+
 
 Some figures in this blog post are generated using
 <a href="https://openai.com/dall-e-2/" target="_blank">DALL.E</a>.
