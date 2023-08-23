@@ -5,17 +5,18 @@ description: A deep reinforcement learning framework that ensures safety of the 
 img: /assets/img/blocksworld.png
 ---
 
-[<a href="https://arxiv.org/abs/2303.03226" target="_blank">Paper</a>]
+[<a href="https://www.ijcai.org/proceedings/2023/0637.pdf" target="_blank">Paper</a>]
 [<a href="https://github.com/wenchiyang/pls" target="_blank">Code</a>]
 
 Some figures in this blog post are generated using
 <a href="https://openai.com/dall-e-2/" target="_blank">DALL.E</a>.
 
-
+## Safety in Driving (a very soft introduction) 
 
 <center>
 <img src="{{ site.baseurl }}/assets/img/ellenselfdrivingcar.png" alt="Ellen and a self driving car" width="400">
 </center>
+
 
 
 >Ellen had heard a lot about the new self-driving cars, and while the idea of being 
@@ -87,7 +88,10 @@ perform the action in the environment.
 While early shielding techniques operate completely on symbolic state spaces,
 more recent ones have incorporated a neural policy learner to handle continuous
 state spaces. In this blog, we will also focus
-on **integrating shielding with neural policy learners**.
+on **integrating shielding with neural policy learners**. A main difference of our 
+work is that our neural policy takes as input an image (such as the following figure) 
+instead of a symbolic representation. 
+
 
 <center>
 <img src="{{ site.baseurl }}/assets/img/donotturnright.png" alt="" width="500">
@@ -130,7 +134,7 @@ To mitigate the these issues, we must answer two questions:
 1. How can the shield capture **uncertainties** in the real world? 
 2. How should the interface between the agent and the shield be expanded to incorporate both *uncertainty* and *safety*?  
 
-## More ideally, driving **safer** using a **probabilistic** shield
+## More ideal: being **safer** by using a **probabilistic** shield
 
 A more ideal learning process may look like this: Consider the same scenario,
 but now the shield has probabilistic perception to detect the probability
@@ -214,3 +218,5 @@ probabilistic shields provide a realistic and principled way to
 balance return and safety. This also allows for shielding to be 
 applied at the policy level instead of at the individual action level, 
 which is typically done in the literature.
+
+For the details of our method, please check out the <a href="https://www.ijcai.org/proceedings/2023/0637.pdf" target="_blank">paper</a>. 
